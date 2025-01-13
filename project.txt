@@ -1,3 +1,7 @@
 - morgan:  Mogran will display in how much time the query will excute.
 - bcryptjs: It helps to encrypt password.
-- npm audit fix to fix vulnarability
+- npm audit fix to fix vulnarability.
+- concurrently package used to run mutiple commands concurrently.
+        ("start": "concurrently \"command1 arg\" \"command2 arg\"")
+
+for any isue checkout package.json on root
