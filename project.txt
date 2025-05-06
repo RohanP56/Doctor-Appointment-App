@@ -5,3 +5,5 @@
         ("start": "concurrently \"command1 arg\" \"command2 arg\"")
 
 for any isue checkout package.json on root
+
+http://localhost:5173/
