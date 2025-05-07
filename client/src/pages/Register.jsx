@@ -7,10 +7,10 @@ import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
   const navigate = useNavigate();
 
-  //Form Handler
-  const onFinishHandler = async (values) => {
+  //form handler
+  const onfinishHandler = async (values) => {
     try {
-      const res = await axios.post("/api/v1/user/register", values);
+      const res = await axios.post("http://localhost:8080/api/v1/user/register", values);
       if (res.data.success) {
         message.success("Register Successfully!");
         navigate("/login");
@@ -19,19 +19,18 @@ const Register = () => {
       }
     } catch (error) {
       console.log(error);
-      message.error("Something went wrong");
+      message.error("Something Went Wrong");
     }
   };
-
   return (
     <>
-      <div className="form-container">
+      <div className="form-container ">
         <Form
           layout="vertical"
-          onFinish={onFinishHandler}
+          onFinish={onfinishHandler}
           className="register-form"
         >
-          <h3 className="h3">Sign Up</h3>
+          <h3 className="text-center">Sign Up</h3>
           <Form.Item label="Name" name="name">
             <Input type="text" required />
           </Form.Item>
@@ -41,10 +40,10 @@ const Register = () => {
           <Form.Item label="Password" name="password">
             <Input type="password" required />
           </Form.Item>
-          <Link to="/login" className="m-4">
+          <Link to="/login" className="m-2">
             Existing User
           </Link>
-          <button id="btn" className="btn btn-primary" type="submit">
+          <button className="btn btn-primary" type="submit">
             Sign Up
           </button>
         </Form>
